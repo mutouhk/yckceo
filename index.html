@@ -18,7 +18,7 @@
         <div class="layui-panel" style="padding: 20px;">
             <ul class="layui-timeline">
                 <li class="layui-timeline-item">
-                  <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
+                  <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
                   <div class="layui-timeline-content layui-text">
                     <h3 class="layui-timeline-title">www.yckceo.com</h3>
                     <p>
@@ -30,7 +30,7 @@
                   </div>
                 </li>
                 <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
                     <div class="layui-timeline-content layui-text">
                       <h3 class="layui-timeline-title">www.yckceo1.com</h3>
                       <p>
@@ -42,7 +42,7 @@
                     </div>
                 </li>
                 <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
                     <div class="layui-timeline-content layui-text">
                       <h3 class="layui-timeline-title">yck.mumuceo.com</h3>
                       <p>
@@ -58,9 +58,9 @@
 
         </div>
         <div style="margin-top: 10px;"></div>
-        <blockquote class="layui-elem-quote" style="text-align: center;">
+        <!-- <blockquote class="layui-elem-quote" style="text-align: center;">
             以上地址会根据您网络进行检测
-        </blockquote>
+        </blockquote> -->
 
 
     </div>
@@ -69,14 +69,9 @@
         var ustatus = [];
         layui.use(['layer', 'table','element'], function() {
           var layer = layui.layer,table = layui.table,element = layui.element;
+          var mun = $(".layui-timeline-item").length;
+
         });
-        setTimeout(function(){
-            $(".layui-timeline-item .layui-icon-refresh").addClass("layui-icon-close");
-            $(".layui-timeline-item .layui-icon-refresh").removeClass("layui-icon-refresh layui-anim-loop");
-           }, 10000);
         </script>
-        <script src="http://www.yckceo.com/home/index/getstatus/eq/0"></script>
-        <script src="http://www.yckceo1.com/home/index/getstatus/eq/1"></script>
-        <script src="http://yck.mumuceo.com/home/index/getstatus/eq/2"></script>
 </body>
 </html>
