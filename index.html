@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>源仓库最新可用地址</title>
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.6.8/css/layui.css">
+    
     <script src="https://www.layuicdn.com/auto/layui.js" v="layui" e="layui"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
 <body>
     <div style="margin-top: 50px;"></div>
@@ -21,6 +23,7 @@
                     <h3 class="layui-timeline-title">www.yckceo.com</h3>
                     <p>
                         <div class="layui-btn-container">
+                            <a href="http://www.yckceo.com" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
                             <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
                         </div>
                     </p>
@@ -32,6 +35,7 @@
                       <h3 class="layui-timeline-title">www.yckceo1.com</h3>
                       <p>
                         <div class="layui-btn-container">
+                            <a href="http://www.yckceo1.com" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
                             <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
                         </div>
                       </p>
@@ -43,6 +47,7 @@
                       <h3 class="layui-timeline-title">yck.mumuceo.com</h3>
                       <p>
                         <div class="layui-btn-container">
+                            <a href="http://yck.mumuceo.com" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
                             <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
                             <button type="button" class="layui-btn layui-btn-sm">QQ</button>
                         </div>
@@ -60,28 +65,19 @@
 
     </div>
     <script type="text/javascript">
-        layui.use(['jquery', 'layer', 'table','element'], function() {
-          var $ = layui.jquery,layer = layui.layer,table = layui.table,element = layui.element;
-
+        var ustatus = [];
+        layui.use(['layer', 'table','element'], function() {
+          var layer = layui.layer,table = layui.table,element = layui.element;
           var mun = $(".layui-timeline-item").length;
           for(var i = 0;i<mun;i++){
               var dataurl = $(".layui-timeline-item .layui-timeline-title:eq("+i+")").html();
-              $.ajax({
-                url:"http://"+dataurl+"/home/index/getstatus",
-                type:"get",
-                async:false,
-                dataType: "json", 
-                success:function(res){
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh layui-anim-loop");
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-circle");
-                },
-                error:function(jqXHR, textStatus, errorThrown){
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh layui-anim-loop");
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-close");
-                }
-              
-            });
+              $.getScript("http://"+dataurl+"/home/index/getstatus/eq/"+i);
           }
+          setTimeout(function(){
+            $(".layui-timeline-item .layui-icon-refresh").addClass("layui-icon-close");
+            $(".layui-timeline-item .layui-icon-refresh").removeClass("layui-icon-refresh layui-anim-loop");
+           }, 10000);
+
 
         });
         </script>
