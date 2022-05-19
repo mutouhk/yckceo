@@ -1,60 +1,86 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>源仓库官方 阅读APP书源合集</title>
-  <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>源仓库最新可用地址</title>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.6.8/css/layui.css">
+    <script src="https://www.layuicdn.com/auto/layui.js" v="layui" e="layui"></script>
 </head>
-<body class="">
-        <div class="layui-container" style="margin-top: 50px;">
-            
-                <blockquote class="layui-elem-quote">
-                    <p style="text-indent:2em;">
-	<strong><span style="font-size:24px;color:#64451D;">源仓库最新可用地址</span></strong> 
-</p>
+<body>
+    <div style="margin-top: 50px;"></div>
+    <!-- layui-icon-circle  layui-icon-close -->
+    <div class="layui-container">
+        <blockquote class="layui-elem-quote" style="font-size: xx-large;text-align: center;">源仓库最新可用地址</blockquote>
+        <div style="margin-top: 10px;"></div>
+        <div class="layui-panel" style="padding: 20px;">
+            <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                  <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">www.yckceo.com</h3>
+                    <p>
+                        <div class="layui-btn-container">
+                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
+                        </div>
+                    </p>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">www.yckceo1.com</h3>
+                      <p>
+                        <div class="layui-btn-container">
+                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
+                        </div>
+                      </p>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-close"></i>
+                    <div class="layui-timeline-content layui-text">
+                      <h3 class="layui-timeline-title">yck.mumuceo.com</h3>
+                      <p>
+                        <div class="layui-btn-container">
+                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
+                            <button type="button" class="layui-btn layui-btn-sm">QQ</button>
+                        </div>
+                      </p>
+                    </div>
+                </li>
+              </ul>
+
+        </div>
+        <div style="margin-top: 10px;"></div>
+        <blockquote class="layui-elem-quote" style="text-align: center;">
+            以上地址会根据您网络进行检测
+        </blockquote>
 
 
-<p style="text-indent:2em;">
-	<strong><a href="http://www.yckceo.com" target="_blank"><span style="color:#E53333;">http://www.yckceo.com</span></a></strong>
-</p>
-<p style="text-indent:2em;">
-	[香港线路]正常访问,使用Gitee账号登录即可分享书源
-</p>
-<br /><br />
+    </div>
+    <script type="text/javascript">
+        layui.use(['jquery', 'layer', 'table','element'], function() {
+          var $ = layui.jquery,layer = layui.layer,table = layui.table,element = layui.element;
 
-<p style="text-indent:2em;">
-	<strong><a href="http://www.yckceo1.com" target="_blank"><span style="color:#E53333;">http://www.yckceo1.com</span></a></strong>
-</p>
-<p style="text-indent:2em;">
-	[美国线路]正常访问,使用Gitee账号登录即可分享书源
-</p>
-<br /><br />
+          var mun = $(".layui-timeline-item").length;
+          for(var i = 0;i<mun;i++){
+              var dataurl = $(".layui-timeline-item .layui-timeline-title:eq("+i+")").html();
+              $.ajax({
+                url:"http://"+dataurl,
+                type:"get",
+                async:false,
+                dataType: "json", 
+                success:function(){
+                    ress= 1;
+                    console.log('ajaxress'+ress);
+                 },
+              
+            });
+              console.log(dataurl);
+          }
 
-<p style="text-indent:2em;">
-	<strong><a href="http://yck.mumuceo.com" target="_blank"><span style="color:#E53333;">http://yck.mumuceo.com</span></a></strong>
-</p>
-<p style="text-indent:2em;">
-	<strong>2021.11.11 发现已被墙！！！</strong>
-</p>
-<p style="text-indent:2em;">
-	属于最原始地址，当前地址可用，但被很多浏览器安全限制。
-</p>
-<p style="text-indent:2em;">
-	需要使用谷歌浏览器或者其他第三方浏览器访问，也可以在已有的浏览器设置里面关闭安全检测之类的
-</p>
-<br /><br />
-                </blockquote>
-
-            
-            
-        </div> 
-<!-- 引入 layui.js 的 <script> 标签最好放置在 html 末尾 -->
-<!-- <script src="/layui/layui.js"></script> -->
-<script>
-
-</script>
+        });
+        </script>
 </body>
 </html>
