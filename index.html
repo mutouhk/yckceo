@@ -72,11 +72,11 @@
                 async:false,
                 dataType: "json", 
                 success:function(res){
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh");
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh layui-anim-loop");
                     $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-circle");
                 },
                 error:function(jqXHR, textStatus, errorThrown){
-                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh");
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh layui-anim-loop");
                     $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-close");
                 }
               
