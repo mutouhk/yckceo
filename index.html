@@ -27,7 +27,7 @@
                   </div>
                 </li>
                 <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
                     <div class="layui-timeline-content layui-text">
                       <h3 class="layui-timeline-title">www.yckceo1.com</h3>
                       <p>
@@ -38,7 +38,7 @@
                     </div>
                 </li>
                 <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-close"></i>
+                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-refresh"></i>
                     <div class="layui-timeline-content layui-text">
                       <h3 class="layui-timeline-title">yck.mumuceo.com</h3>
                       <p>
@@ -67,17 +67,20 @@
           for(var i = 0;i<mun;i++){
               var dataurl = $(".layui-timeline-item .layui-timeline-title:eq("+i+")").html();
               $.ajax({
-                url:"http://"+dataurl,
+                url:"http://"+dataurl+"/home/index/getstatus",
                 type:"get",
                 async:false,
                 dataType: "json", 
-                success:function(){
-                    ress= 1;
-                    console.log('ajaxress'+ress);
-                 },
+                success:function(res){
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh");
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-circle");
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").removeClass("layui-icon-refresh");
+                    $(".layui-timeline-item .layui-timeline-axis:eq("+i+")").addClass("layui-icon-close");
+                }
               
             });
-              console.log(dataurl);
           }
 
         });
