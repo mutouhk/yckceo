@@ -64,22 +64,19 @@
 
 
     </div>
+
     <script type="text/javascript">
         var ustatus = [];
         layui.use(['layer', 'table','element'], function() {
           var layer = layui.layer,table = layui.table,element = layui.element;
-          var mun = $(".layui-timeline-item").length;
-          for(var i = 0;i<mun;i++){
-              var dataurl = $(".layui-timeline-item .layui-timeline-title:eq("+i+")").html();
-              $.getScript("http://"+dataurl+"/home/index/getstatus/eq/"+i);
-          }
-          setTimeout(function(){
+        });
+        setTimeout(function(){
             $(".layui-timeline-item .layui-icon-refresh").addClass("layui-icon-close");
             $(".layui-timeline-item .layui-icon-refresh").removeClass("layui-icon-refresh layui-anim-loop");
            }, 10000);
-
-
-        });
         </script>
+        <script src="http://www.yckceo.com/home/index/getstatus/eq/0"></script>
+        <script src="http://www.yckceo1.com/home/index/getstatus/eq/1"></script>
+        <script src="http://yck.mumuceo.com/home/index/getstatus/eq/2"></script>
 </body>
 </html>
