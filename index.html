@@ -5,73 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>源仓库最新可用地址</title>
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.6.8/css/layui.css">
-    
-    <script src="https://www.layuicdn.com/auto/layui.js" v="layui" e="layui"></script>
-    <script src="jquery.min.js" v="layui" e="layui"></script>
+    <style>
+      .layui-card {
+        box-shadow: 2px 2px 2px 2px #444;
+      }
+    </style>
 </head>
-<body>
+<body class="layui-bg-gray">
     <div style="margin-top: 50px;"></div>
     <!-- layui-icon-circle  layui-icon-close -->
     <div class="layui-container">
-        <blockquote class="layui-elem-quote" style="font-size: xx-large;text-align: center;">源仓库最新可用地址</blockquote>
+      <div class="layui-card" style="font-size: xx-large;text-align: center;padding: 10px;">
+        <p>yckceo.vip</p>
+        <p>最新可用地址列表</p>
+      </div>
+        
         <div style="margin-top: 10px;"></div>
-        <div class="layui-panel" style="padding: 20px;">
-            <ul class="layui-timeline">
-                <li class="layui-timeline-item">
-                  <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
-                  <div class="layui-timeline-content layui-text">
-                    <h3 class="layui-timeline-title">www.yckceo.com</h3>
-                    <p>
-                        <div class="layui-btn-container">
-                            <a href="http://www.yckceo.com" target="_blank" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
-                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
-                        </div>
-                    </p>
-                  </div>
-                </li>
-                <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
-                    <div class="layui-timeline-content layui-text">
-                      <h3 class="layui-timeline-title">www.yckceo1.com</h3>
-                      <p>
-                        <div class="layui-btn-container">
-                            <a href="http://www.yckceo1.com" target="_blank" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
-                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
-                        </div>
-                      </p>
-                    </div>
-                </li>
-                <li class="layui-timeline-item">
-                    <i class="layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-circle"></i>
-                    <div class="layui-timeline-content layui-text">
-                      <h3 class="layui-timeline-title">yck.mumuceo.com</h3>
-                      <p>
-                        <div class="layui-btn-container">
-                            <a href="http://yck.mumuceo.com" target="_blank" type="button" class="layui-btn layui-btn-sm layui-btn-normal">点击跳转</a>
-                            <button type="button" class="layui-btn layui-btn-sm">Gitee</button>
-                            <button type="button" class="layui-btn layui-btn-sm">QQ</button>
-                        </div>
-                      </p>
-                    </div>
-                </li>
-              </ul>
-
+        <div class="layui-card">
+          <div class="layui-card-header" style="text-align:center;">
+            <a href="http://www.yckceo.com" target="_blank" type="button" class="layui-btn layui-btn-fluid layui-btn-normal">http://www.yckceo.com</a>
+          </div>
+          <div class="layui-card-body">
+            <p>可用，仅支持gitee登录</p>
+          </div>
         </div>
-        <div style="margin-top: 10px;"></div>
-        <!-- <blockquote class="layui-elem-quote" style="text-align: center;">
-            以上地址会根据您网络进行检测
-        </blockquote> -->
 
+        <div class="layui-card">
+          <div class="layui-card-header" style="text-align:center;">
+            <a href="http://www.yckceo1.com" target="_blank" type="button" class="layui-btn layui-btn-fluid layui-btn-normal">http://www.yckceo1.com</a>  
+          </div>
+          <div class="layui-card-body">
+            <p>可用，仅支持gitee登录</p>
+          </div>
+        </div>
+
+        <div class="layui-card">
+          <div class="layui-card-header" style="text-align:center;">
+            <a href="http://yck.mumuceo.com" target="_blank" type="button" class="layui-btn layui-btn-fluid layui-btn-normal">http://yck.mumuceo.com</a> 
+          </div>
+          <div class="layui-card-body">
+            <p>已被墙，需要借工具，可用QQ和gitee登录</p>
+          </div>
+        </div>
+
+        
+        <div style="margin-top: 10px;"></div>
 
     </div>
-
-    <script type="text/javascript">
-        var ustatus = [];
-        layui.use(['layer', 'table','element'], function() {
-          var layer = layui.layer,table = layui.table,element = layui.element;
-          var mun = $(".layui-timeline-item").length;
-
-        });
-        </script>
 </body>
 </html>
