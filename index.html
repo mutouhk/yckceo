@@ -1,36 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.6.8/css/layui.css">
-    <title>源仓库最新地址</title>
-</head>
-<body class="layui-bg-gray">
-    <div class="layui-container" style="margin-top: 20%;">
-        <div class="layui-card" style="border-radius:20px;">
-            <div class="layui-card-header" style="text-align: center;font-size: 20px;color: #fff;background-color: #5FB878;border-radius: 20px 20px 0 0;">源仓库最新地址</div>
-            <div class="layui-card-body" style="text-align: center;word-wrap:break-word;word-break:break-all;">
-                <b>YckCeo.Vip</b>
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+       <title>源仓库</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="apple-touch-icon" href="/favicon.ico">
+        <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.6.8/css/layui.css">
+        <style>
+            body{
+                margin:0px;
+                background: url(/logo.jpeg) no-repeat;
+                background-size:100% 100%;
+                background-attachment:fixed;
+                padding: 15% 5% 5% 5%;
+            }
+            .main{
+                background-color: rgb(189 182 182 / 50%);
+                text-align:center;
+                border-radius:20px;
+                color:#fff;
+                padding: 10px;
+            }
+            .btnlink a {
+                border-radius:20px;
+            }
+        </style>
+    </head>
+     <body>
+        <div class="layui-container">
+            <div class="main layui-panel">
+                <h1><strong>源仓库</strong></h1>
+                <p style="font-size:3vh;">开源APP书源分享平台</p>
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>阅读App相关地址</legend>
+                    <div class="layui-field-box">
+                        <div class="layui-btn-container btnlink">
+                            <a href="https://www.coolapk.com/apk/io.legado.app.release" target="_blank" class="layui-btn layui-btn-lg layui-btn-normal">酷安(3.0)</a> 
+                            <a href="https://github.com/gedoor/legado/releases" target="_blank" class="layui-btn layui-btn-lg layui-btn-normal">Github(3.x)</a> 
+                            <a href="https://github.com/gedoor/MyBookshelf/releases" target="_blank" class="layui-btn layui-btn-lg layui-btn-normal">Github(2.0)</a> 
+                            
+                          </div>
+                    </div>
+                </fieldset>
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>数据资源中心</legend>
+                    <div class="layui-field-box">
+                        <div class="layui-btn-container btnlink">
+                            <a href="https://www.yckceo.com/yuedu/shuyuan/index.html" class="layui-btn layui-btn-lg layui-btn-normal">书源</a> 
+                            <a href="https://www.yckceo.com/yuedu/rssyuan/index.html" class="layui-btn layui-btn-lg layui-btn-normal">订阅</a> 
+                            <a href="https://www.yckceo.com/yuedu/theme/index.html" class="layui-btn layui-btn-lg layui-btn-normal">主题</a> 
+                          </div>
+                    </div>
+                </fieldset>
+                
+                <p style="color:#fff;">YckCeo.Vip © by木木Q714364300</p>
             </div>
-            <div class="layui-card-foot" style="padding: 10px;text-align: center;">
-                页面自动 <a id="href" href="http://www.yckceo.com">跳转</a> 等待时间： <b id="wait">3</b>
-            </div>
-          </div>  
-    </div>
-    <script type="text/javascript">
-        (function(){
-            var wait = document.getElementById('wait'),
-                href = document.getElementById('href').href;
-            var interval = setInterval(function(){
-                var time = --wait.innerHTML;
-                if(time <= 0) {
-                    clearInterval(interval);
-                    location.href = "http://www.yckceo.com";
-                    
-                };
-            }, 1000);
-        })();
-    </script>
+        </div>
+     
 </body>
 </html>
