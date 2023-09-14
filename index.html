@@ -7,7 +7,22 @@
 	<meta name="description" content="源仓库最新网址获取地址，源仓库官方网站">
 	<link rel="stylesheet" href="/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="https://unpkg.com/jquery@1.12.4/dist/jquery.js"></script>
 </head>
+	
+	<script>
+		function randomPassword()
+			{
+			    var seed = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+			    seedlength = seed.length;
+			    var createPassword = '';
+			    for (i=0;i<10;i++) {
+			        j = Math.floor(Math.random()*seedlength);
+			        createPassword += seed[j];
+			    }
+			    return createPassword;
+			}
+	</script>
 <body>
 	<div class="wrapper">
 		<div class="main">
@@ -25,8 +40,8 @@
 							<a href="http://www.yckceo.com" target="_blank"><i>http://www.yckceo.com</i></a>
 						</li>
 						<li>
-							备用地址
-							<a href="http://www.yckceo1.com" target="_blank"><i>http://www.yckceo1.com</i></a>
+							备用地址(临时)
+							<a id="aurl" href="#" target="_blank"><i id="aname">临时生成中.....</i></a>
 						</li>
 						
 						<li>
@@ -60,4 +75,9 @@
 		</ul>
 	</div>
 </body>
+	<script>
+		var $urls = randomPassword() + ".yckceo1.com";
+		$("#aurl").attr("href",$urls);
+		$("#aname").html($urls);
+	</script>
 </html>
