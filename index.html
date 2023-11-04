@@ -10,19 +10,6 @@
 	<script src="https://unpkg.com/jquery@1.12.4/dist/jquery.js"></script>
 </head>
 	
-	<script>
-		function randomPassword()
-			{
-			    var seed = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
-			    seedlength = seed.length;
-			    var createPassword = '';
-			    for (i=0;i<3;i++) {
-			        j = Math.floor(Math.random()*seedlength);
-			        createPassword += seed[j];
-			    }
-			    return createPassword;
-			}
-	</script>
 <body>
 	<div class="wrapper">
 		<div class="main">
@@ -75,9 +62,5 @@
 		</ul>
 	</div>
 </body>
-	<script>
-		// var $urls = "http://" + randomPassword() + ".yckceo1.com";
-		// $("#aurl").attr("href",$urls);
-		// $("#aname").html($urls+'(不可登录，其他正常)');
-	</script>
+
 </html>
