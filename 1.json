@@ -4,7 +4,7 @@
         "0.53.2": {
             "linux": {
                 "name": "frp_0.53.2_linux_amd64.tar.gz",
-                "url": "https://cdn.iw3c.com.cn/bt-plugin/frp/0.53.2/frp_0.53.2_linux_amd64.tar.gz --no-check-certificate"
+                "url": "https://yckceo.vip/frp_0.53.2_linux_amd64.tar.gz --no-check-certificate"
             },
             "windows": {
                 "name": "frp_0.53.2_windows_amd64.zip",
