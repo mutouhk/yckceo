@@ -96,12 +96,12 @@
           .catch(() => resolve(false));
       });
     }
-    async function checkAllUrls() {
+    function checkAllUrls() {
       const urlList = document.getElementById('urllist');
       const listItems = urlList.querySelectorAll('li');
       for (const li of listItems) {
         const url = $(li).children("a").attr("href");
-        const isAccessible = await checkUrl(url);
+        const isAccessible = checkUrl(url);
         var cssname = "layui-border-red";
         var cktitle = "访问失败";
         if (isAccessible) {
