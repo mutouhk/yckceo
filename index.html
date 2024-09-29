@@ -91,17 +91,17 @@
     var $ = layui.jquery;
     function checkUrl(url) {
       return new Promise((resolve, reject) => {
-        fetch(url, { mode: 'no-cors', method: 'HEAD' })
+        fetch(url, { mode: 'no-cors', method: 'HEAD', timeout: 10000 })
           .then(() => resolve(true))
           .catch(() => resolve(false));
       });
     }
-    function checkAllUrls() {
+    async function checkAllUrls() {
       const urlList = document.getElementById('urllist');
       const listItems = urlList.querySelectorAll('li');
       for (const li of listItems) {
         const url = $(li).children("a").attr("href");
-        const isAccessible = checkUrl(url);
+        const isAccessible = await checkUrl(url);
         var cssname = "layui-border-red";
         var cktitle = "访问失败";
         if (isAccessible) {
