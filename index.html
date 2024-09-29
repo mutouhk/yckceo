@@ -8,7 +8,23 @@
     <meta name="keywords" content="源仓库,书源,地址，阅读，异次元,图源,搜书大师">
     <meta name="description" content="源仓库最新网址获取地址，源仓库官方网站">
     <link href="/layui/css/layui.css" rel="stylesheet">
+    <script src="/layui/layui.js"></script>
 
+    <style>
+      .layui-card-header {
+        border-radius: 10px 10px 0px 0px;
+        text-align: center;
+      }
+
+      #urllist .layui-btn {
+        float: right;
+      }
+
+      #urllist li {
+        margin-bottom: 5px;
+        border-bottom: 1px dashed #ccc;
+      }
+    </style>
 
   </head>
 
@@ -22,45 +38,83 @@
       </div>
 
       <div class="layui-card" style="margin-top: 10px;">
-        <div class="layui-card-header layui-bg-green ">源仓库地址列表</div>
+        <div class="layui-card-header layui-bg-green ">
+          <h3>源仓库地址列表</h3>
+        </div>
         <div class="layui-card-body layui-text">
-          <p><a href="http://www.yckceo.com" target="_blank">www.yckceo.com</a> <span style="float: right;">主地址</span></p>
-          <p><a href="http://www.yckceo1.com" target="_blank">www.yckceo1.com</a> <span style="float: right;">备用地址</span></p>
-          <p><a href="http://www.yckgo.top" target="_blank">www.yckgo.top</a> <span style="float: right;">备用地址</span></p>
-          <hr>
-           <p><a href="http:/www.yck2.com" target="_blank">www.yck2.com</a> - <b>有效期到 10.09号</b> <span style="float: right;">备用地址</span> </p>
-          <p><a href="http://www.e-yck.top" target="_blank">www.e-yck.top</a> - <b>有效期到 9.30号</b> <span style="float: right;">备用地址</span> </p>
-         
+          <ol id="urllist" style="font-size: 1.1rem;">
+            <li><a href="http://www.yckceo.com" target="_blank">www.yckceo.com</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
+            <li><a href="http://www.yckceo1.com" target="_blank">www.yckceo1.com</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
+            <li><a href="http://www.yckgo.top" target="_blank">www.yckgo.top</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
+            <li><a href="http://www.yck2.com" target="_blank">www.yck2.com</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
+            <li><a href="http://www.e-yck.top" target="_blank">www.e-yck.top</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
+          </ol>
         </div>
       </div>
 
 
-      
+
       <div class="layui-card" style="margin-top: 10px;">
-        <div class="layui-card-header layui-bg-orange ">常见问题</div>
+        <div class="layui-card-header layui-bg-orange ">
+          <h3>常见问题</h3>
+        </div>
         <div class="layui-card-body layui-text">
-          <p><a href="/1.html" target="_blank">源仓库打不开 提示禁止访问或显示无法连接？</a></p>
-
+          <ul style="font-size: 1.0rem;">
+            <li><a href="/1.html" target="_blank">源仓库打不开 提示禁止访问或显示无法连接？</a></li>
+          </ul>
         </div>
       </div>
-      
+
       <div class="layui-card" style="margin-top: 10px;">
-        <div class="layui-card-header layui-bg-red ">官方交流区</div>
+        <div class="layui-card-header layui-bg-red ">
+          <h3>官方交流区</h3>
+        </div>
         <div class="layui-card-body layui-text">
-          <p><a href="https://pd.qq.com/s/aw1t2467y" target="_blank">QQ交流频道(推荐)</a></p>
-          <p><a href="https://t.me/yckceo" target="_blank">TG交流频道</a></p>
-          <p><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jVrJew7VVRKcVyWYUfENMW0JRuNU7RNh&authKey=6JF%2FnMIIDCpSuQOK2M6W1c6Vx%2Fw54G7SUJeq0W59MoPOym6L5en%2FJWRcvUx44%2FGW&noverify=0&group_code=958126267" target="_blank">源仓库QQ交流群 958126267</a></p>
-          <p><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=7kvbiwyKVwx3STU6QQlJfK9dm1fvqQ9V&authKey=mSLdZnzFdD2%2BVtP9f2KtH4ui%2B6FBgYkZzIrgNirDIteC4QdYacpo7gvdv1YigYG9&noverify=0&group_code=805617493" target="_blank">源仓库QQ交流2群 805617493</a></p>
-          
+          <ul style="font-size: 1.0rem;">
+            <li><a href="https://pd.qq.com/s/aw1t2467y" target="_blank">QQ交流频道(推荐)</a></li>
+            <li><a href="https://t.me/yckceo" target="_blank">TG交流频道</a></li>
+            <li><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jVrJew7VVRKcVyWYUfENMW0JRuNU7RNh&authKey=6JF%2FnMIIDCpSuQOK2M6W1c6Vx%2Fw54G7SUJeq0W59MoPOym6L5en%2FJWRcvUx44%2FGW&noverify=0&group_code=958126267" target="_blank">源仓库QQ交流群 958126267</a></li>
+            <li><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=7kvbiwyKVwx3STU6QQlJfK9dm1fvqQ9V&authKey=mSLdZnzFdD2%2BVtP9f2KtH4ui%2B6FBgYkZzIrgNirDIteC4QdYacpo7gvdv1YigYG9&noverify=0&group_code=805617493" target="_blank">源仓库QQ交流2群 805617493</a></li>
+
+          </ul>
+
+
         </div>
       </div>
 
 
-      
+
       <div style="margin-top: 100px;"></div>
 
   </body>
-<script>
-  // location.href = "https://link3.cc/yckceo";
-</script>
+  <script>
+    var $ = layui.jquery;
+    function checkUrl(url) {
+      return new Promise((resolve, reject) => {
+        fetch(url, { mode: 'no-cors', method: 'HEAD' })
+          .then(() => resolve(true))
+          .catch(() => resolve(false));
+      });
+    }
+    async function checkAllUrls() {
+      const urlList = document.getElementById('urllist');
+      const listItems = urlList.querySelectorAll('li');
+      for (const li of listItems) {
+        const url = $(li).children("a").attr("href");
+        const isAccessible = await checkUrl(url);
+        var cssname = "layui-border-red";
+        var cktitle = "访问失败";
+        if (isAccessible) {
+          var cssname = "layui-border-green";
+          var cktitle = "正常访问";
+        }
+        $(li).children(".layui-btn").removeClass("layui-border");
+        $(li).children(".layui-btn").addClass(cssname);
+        $(li).children(".layui-btn").html(cktitle);
+      }
+    }
+
+    checkAllUrls();
+  </script>
+
 </html>
