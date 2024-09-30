@@ -92,32 +92,34 @@
   </body>
   <script>
     var $ = layui.jquery;
-    function checkUrl(url) {
+    async function checkUrl(url) {
       return new Promise((resolve, reject) => {
-        fetch(url, { mode: 'no-cors', method: 'HEAD', timeout: 10000 })
+        fetch(url, { mode: 'no-cors', method: 'HEAD' })
           .then(() => resolve(true))
           .catch(() => resolve(false));
       });
     }
-    async function checkAllUrls() {
-      const urlList = document.getElementById('urllist');
-      const listItems = urlList.querySelectorAll('li');
-      for (const li of listItems) {
-        const url = $(li).children("a").attr("href");
-        const isAccessible = await checkUrl(url);
-        var cssname = "layui-border-red";
-        var cktitle = "访问失败";
-        if (isAccessible) {
-          var cssname = "layui-border-green";
-          var cktitle = "正常访问";
-        }
-        $(li).children(".layui-btn").removeClass("layui-border");
-        $(li).children(".layui-btn").addClass(cssname);
-        $(li).children(".layui-btn").html(cktitle);
+    async function checkAllUrls(li) {
+      const url = $(li).children("a").attr("href");
+      const isAccessible = await checkUrl(url);
+      var cssname = "layui-border-red";
+      var cktitle = "访问失败";
+      if (isAccessible) {
+        var cssname = "layui-border-green";
+        var cktitle = "正常访问";
       }
-    }
+      $(li).children(".layui-btn").removeClass("layui-border");
+      $(li).children(".layui-btn").addClass(cssname);
+      $(li).children(".layui-btn").html(cktitle);
 
-    checkAllUrls();
+    }
+    function listaction() {
+      var lis = $("#urllist li").length;
+      $("#urllist li").each(function (i, v) {
+        setTimeout(checkAllUrls(v), 1000);
+      });
+    }
+    listaction();
   </script>
 
 </html>
