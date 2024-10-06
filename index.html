@@ -114,6 +114,7 @@
         cssname = "layui-border-red";
         cktitle = "到期弃用";
         $(li).children("a").css("text-decoration","line-through");
+        $(li).children("a").removeAttr("href");
       }
       $(li).children(".layui-btn").removeClass("layui-border");
       $(li).children(".layui-btn").addClass(cssname);
