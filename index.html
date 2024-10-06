@@ -50,7 +50,7 @@
             <li><a href="#" target="_blank">www.e-yck.top</a> <span class="layui-btn layui-btn-sm layui-btn-primary layui-border">检测中</span></li>
           </ol>
           <p>检测结果仅供参考,无法访问可尝试使用'魔法'后再测试</p>
-          <p>地址 ④ 将在10.9号到期 | 地址 ⑤ 将在9.30号到期</p>
+          <p>地址 <b>yck2.com</b> 将在 10.9 号到期</p>
           
         </div>
       </div>
@@ -108,7 +108,13 @@
         var cssname = "layui-border-green";
         var cktitle = "正常访问";
       }
-      console.log(url);
+      
+      if(url == "#"){
+        console.log(url);
+        cssname = "layui-border-red";
+        cktitle = "到期弃用";
+        $(li).children("a").css("text-decoration","line-through");
+      }
       $(li).children(".layui-btn").removeClass("layui-border");
       $(li).children(".layui-btn").addClass(cssname);
       $(li).children(".layui-btn").html(cktitle);
