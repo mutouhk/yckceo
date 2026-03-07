@@ -12,7 +12,7 @@
     <meta name="keywords" content="源仓库,源仓库最新地址,源仓库官网,源仓库入口,yckceo,源仓库备用地址,源仓库镜像,开源阅读书源,阅读3.0书源,源仓库防失联,源仓库发布页">
     
     <!-- SEO优化：描述 -->
-    <meta name="description" content="源仓库最新地址发布页，实时检测官网www.yckceo.com及备用镜像站可访问状态。提供开源阅读书源、异次元漫画源、TVbox接口等资源站的最新可用入口，防失联收藏本站。">
+    <meta name="description" content="源仓库最新地址发布页，提供官网www.yckceo.com及备用镜像站可访问状态。提供开源阅读书源、异次元漫画源、TVbox接口等资源站的最新可用入口，防失联收藏本站。">
     
     <!-- 结构化数据标记 -->
     <script type="application/ld+json">
@@ -20,7 +20,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "源仓库最新地址发布页",
-        "description": "源仓库官网及备用镜像地址实时检测与发布",
+        "description": "源仓库官网及备用镜像地址发布",
         "url": "https://www.yckceo.vip",
         "mainEntity": {
             "@type": "ItemList",
@@ -49,10 +49,9 @@
     </script>
     
     <!-- Layui CSS -->
-    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
     <!-- 自定义CSS -->
-    <link rel="stylesheet" href="/style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 背景粒子动画 -->
@@ -61,28 +60,66 @@
     <!-- 头部区域 -->
     <header class="header">
         <h1>源仓库</h1>
-        <p class="subtitle">最新地址发布页 · 实时检测 · 防失联导航</p>
+        <p class="subtitle">最新地址发布页 · 防失联导航</p>
         <span class="badge">建议收藏本页 (Ctrl+D)</span>
     </header>
     
     <!-- 主容器 -->
     <div class="main-container">
         
-        <!-- 地址检测区域 -->
+        <!-- 地址展示区域 -->
         <section class="address-section">
             <h2 class="section-title">
                 <i class="layui-icon layui-icon-website"></i>
-                实时地址检测
+                可用地址列表
             </h2>
-            <div class="address-list" id="addressList">
-                <!-- 动态生成 -->
+            <div class="address-list">
+                <a href="https://www.yckceo.com" target="_blank" class="address-item">
+                    <div class="address-info">
+                        <div class="address-name">
+                            <span class="layui-badge layui-bg-green">主站</span>
+                            源仓库主站
+                        </div>
+                        <div class="address-url">www.yckceo.com</div>
+                        <div class="address-desc">官方主站，资源最全，建议优先访问</div>
+                    </div>
+                    <div class="go-btn">
+                        <i class="layui-icon layui-icon-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.yck2026.top" target="_blank" class="address-item">
+                    <div class="address-info">
+                        <div class="address-name">
+                            <span class="layui-badge layui-bg-blue">备用</span>
+                            备用地址一
+                        </div>
+                        <div class="address-url">www.yck2026.top</div>
+                        <div class="address-desc">镜像站点，稳定快速</div>
+                    </div>
+                    <div class="go-btn">
+                        <i class="layui-icon layui-icon-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.yck.email" target="_blank" class="address-item">
+                    <div class="address-info">
+                        <div class="address-name">
+                            <span class="layui-badge layui-bg-orange">备用</span>
+                            备用地址二
+                        </div>
+                        <div class="address-url">www.yck.email</div>
+                        <div class="address-desc">邮箱域名，不易被封</div>
+                    </div>
+                    <div class="go-btn">
+                        <i class="layui-icon layui-icon-right"></i>
+                    </div>
+                </a>
             </div>
-            <div class="update-time">
-                <i class="layui-icon layui-icon-refresh"></i>
-                上次检测：<span id="lastUpdate">刚刚</span>
-                <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="checkAll()">
-                    <i class="layui-icon layui-icon-refresh-1"></i> 重新检测
-                </button>
+            
+            <div class="tips-box">
+                <i class="layui-icon layui-icon-tips"></i>
+                如以上地址均无法访问，请查看下方"<strong>解决方法</strong>"或稍后再试
             </div>
         </section>
         
@@ -219,28 +256,9 @@
     </footer>
     
     <!-- Layui JS -->
-    <script src="/layui/layui.js"></script>
+    <script src="layui/layui.js"></script>
     
     <script>
-        // 地址配置
-        const addresses = [
-            {
-                name: '源仓库主站',
-                url: '//www.yckceo.com',
-                desc: '官方主站'
-            },
-            {
-                name: '备用地址一',
-                url: '//www.yck2026.top',
-                desc: '镜像站点'
-            },
-            {
-                name: '备用地址二',
-                url: '//www.yck.email',
-                desc: '镜像站点，域名由网友提供'
-            }
-        ];
-        
         // 初始化粒子背景
         function initParticles() {
             const container = document.getElementById('particles');
@@ -254,76 +272,13 @@
             }
         }
         
-        // 渲染地址列表
-        function renderAddresses() {
-            const list = document.getElementById('addressList');
-            list.innerHTML = addresses.map((item, index) => `
-                <div class="address-item checking" id="addr-${index}">
-                    <div class="address-info">
-                        <div class="address-name">${item.name}</div>
-                        <div class="address-url">${item.url}</div>
-                        <div class="address-desc">${item.desc}</div>
-                    </div>
-                    <div class="address-status status-checking">
-                        <span class="status-icon"></span>
-                        <span class="status-text">检测中...</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        // 模拟检测（实际项目中使用AJAX真实检测）
-        function checkAddress(index) {
-            const item = document.getElementById(`addr-${index}`);
-            const statusEl = item.querySelector('.address-status');
-            
-            // 模拟异步检测
-            setTimeout(() => {
-                // 随机状态（实际应为真实检测结果）
-                const isNormal = Math.random() > 0.3;
-                
-                item.classList.remove('checking');
-                statusEl.classList.remove('status-checking');
-                
-                if (isNormal) {
-                    item.classList.add('normal');
-                    statusEl.classList.add('status-normal');
-                    statusEl.innerHTML = '<span class="status-icon"></span><span class="status-text">可访问</span>';
-                    item.style.cursor = 'pointer';
-                    item.onclick = () => window.open(addresses[index].url, '_blank');
-                } else {
-                    item.classList.add('error');
-                    statusEl.classList.add('status-error');
-                    statusEl.innerHTML = '<span class="status-icon"></span><span class="status-text">无法访问</span>';
-                }
-            }, 1000 + Math.random() * 2000);
-        }
-        
-        // 检测所有地址
-        function checkAll() {
-            renderAddresses();
-            addresses.forEach((_, index) => checkAddress(index));
-            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
-        }
-        
         // 初始化
         layui.use(['element', 'layer'], function(){
             var element = layui.element;
             var layer = layui.layer;
             
-            // 初始化
+            // 初始化粒子
             initParticles();
-            renderAddresses();
-            
-            // 延迟检测
-            setTimeout(() => {
-                addresses.forEach((_, index) => checkAddress(index));
-            }, 500);
-            
-            // 自动刷新（每30秒）
-            setInterval(() => {
-                checkAll();
-            }, 30000);
             
             // 收藏提示
             setTimeout(() => {
