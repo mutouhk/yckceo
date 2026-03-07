@@ -1,0 +1,560 @@
+:root {
+    --primary-color: #16b777;
+    --primary-dark: #129e65;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 背景动画粒子 */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 20s infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(100vh) rotate(0deg); 
+        opacity: 0; 
+    }
+    10% { 
+        opacity: 1; 
+    }
+    90% { 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(-100vh) rotate(720deg); 
+        opacity: 0; 
+    }
+}
+
+/* 头部区域 */
+.header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 60px 20px 40px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* 主容器 */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 通用区块样式 */
+.address-section,
+.resource-section,
+.faq-section,
+.tips-section {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.section-title i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* 地址列表 */
+.address-list {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.address-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #ddd;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.address-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.address-item:hover::before {
+    transform: translateX(100%);
+}
+
+.address-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.address-item.normal {
+    border-left-color: var(--primary-color);
+    background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
+}
+
+.address-item.error {
+    border-left-color: #ff5722;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.address-item.checking {
+    border-left-color: #ffc107;
+    background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+}
+
+.address-info {
+    flex: 1;
+}
+
+.address-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.address-url {
+    color: #666;
+    font-size: 0.95em;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 5px;
+}
+
+.address-desc {
+    color: #999;
+    font-size: 0.85em;
+}
+
+.address-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-normal {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-checking {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+.status-normal .status-icon {
+    background: #28a745;
+    animation: none;
+}
+
+.status-error .status-icon {
+    background: #dc3545;
+    animation: none;
+}
+
+.status-checking .status-icon {
+    background: #ffc107;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.update-time {
+    text-align: center;
+    color: #999;
+    font-size: 0.9em;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+}
+
+.update-time button {
+    margin-left: 10px;
+}
+
+/* 资源卡片 */
+.resource-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin: 0 auto 15px;
+    color: white;
+}
+
+.bg-blue { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.bg-purple { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.bg-cyan { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.bg-green { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.bg-red { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.bg-orange { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #ff6b6b !important; }
+
+.resource-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.resource-card .layui-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* FAQ区域 */
+.faq-section .layui-collapse {
+    border: none;
+    background: transparent;
+}
+
+.faq-section .layui-collapse-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-section .layui-collapse-title {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    font-size: 1em;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.faq-section .layui-collapse-title:hover {
+    background: #e9ecef;
+}
+
+.faq-section .layui-collapse-content {
+    padding: 20px;
+    background: #fff;
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    color: #555;
+    line-height: 1.8;
+}
+
+.faq-list li:last-child {
+    border-bottom: none;
+}
+
+.faq-list strong {
+    color: var(--primary-color);
+}
+
+/* 解决步骤 */
+.solution-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 提示区域 */
+.tips-section .layui-card {
+    border-radius: 15px;
+    box-shadow: none;
+    border: 1px solid #e6e6e6;
+}
+
+.tips-section .layui-card-header {
+    background: #fff9e6;
+    color: #d4a373;
+    font-weight: 600;
+    border-bottom: 1px solid #ffe4b5;
+}
+
+.tips-section .layui-elem-quote {
+    border-left-color: var(--primary-color);
+    background: #f0f9f4;
+    color: #555;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+    z-index: 10;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: rgba(255,255,255,0.5);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .header .subtitle {
+        font-size: 1em;
+    }
+    
+    .address-section,
+    .resource-section,
+    .faq-section,
+    .tips-section {
+        padding: 25px;
+    }
+    
+    .address-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .address-status {
+        align-self: flex-end;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.5);
+}
