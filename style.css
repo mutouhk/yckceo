@@ -152,7 +152,7 @@ body {
     font-size: 1.2em;
 }
 
-/* 地址列表 */
+/* 地址列表 - 改为可点击卡片 */
 .address-list {
     display: grid;
     gap: 20px;
@@ -164,12 +164,15 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 25px;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
-    border-left: 4px solid #ddd;
+    border-left: 4px solid var(--primary-color);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .address-item::before {
@@ -179,7 +182,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
     transform: translateX(-100%);
     transition: transform 0.6s;
 }
@@ -190,22 +193,9 @@ body {
 
 .address-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.address-item.normal {
-    border-left-color: var(--primary-color);
-    background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e9 100%);
-}
-
-.address-item.error {
-    border-left-color: #ff5722;
-    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-}
-
-.address-item.checking {
-    border-left-color: #ffc107;
-    background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left-color: var(--primary-dark);
 }
 
 .address-info {
@@ -216,83 +206,70 @@ body {
     font-size: 1.2em;
     font-weight: 600;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.address-name .layui-badge {
+    font-size: 0.7em;
+    padding: 2px 8px;
 }
 
 .address-url {
     color: #666;
-    font-size: 0.95em;
+    font-size: 1em;
     font-family: 'Courier New', monospace;
     margin-bottom: 5px;
+    font-weight: 500;
 }
 
 .address-desc {
-    color: #999;
-    font-size: 0.85em;
+    color: #888;
+    font-size: 0.9em;
 }
 
-.address-status {
+/* 前往按钮 */
+.go-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    white-space: nowrap;
+    justify-content: center;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-.status-normal {
-    background: #d4edda;
-    color: #155724;
+.address-item:hover .go-btn {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(22, 183, 119, 0.4);
 }
 
-.status-error {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.status-checking {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.status-icon {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: blink 2s infinite;
-}
-
-.status-normal .status-icon {
-    background: #28a745;
-    animation: none;
-}
-
-.status-error .status-icon {
-    background: #dc3545;
-    animation: none;
-}
-
-.status-checking .status-icon {
-    background: #ffc107;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-
-.update-time {
+/* 提示框 */
+.tips-box {
+    background: #fff9e6;
+    border: 1px solid #ffe4b5;
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: #d4a373;
+    font-size: 0.95em;
     text-align: center;
-    color: #999;
-    font-size: 0.9em;
-    padding-top: 20px;
-    border-top: 1px dashed #eee;
 }
 
-.update-time button {
-    margin-left: 10px;
+.tips-box i {
+    color: #ffc107;
+    margin-right: 5px;
+    font-size: 1.1em;
+}
+
+.tips-box strong {
+    color: #ff9800;
 }
 
 /* 资源卡片 */
@@ -511,34 +488,18 @@ body {
     }
     
     .address-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        padding: 20px;
     }
     
-    .address-status {
-        align-self: flex-end;
+    .go-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
     }
     
     .section-title {
         font-size: 1.2em;
     }
-}
-
-/* 加载动画 */
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 /* 滚动条美化 */
